@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Big+Shoulders:opsz,wght@10..72,100..900&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Lexend+Deca:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
 
+* {
+    margin: 0;
+    padding: 0;
+}
+
 body {
     display: flex;
     margin: 0;
@@ -35,11 +40,12 @@ body {
 
 .conteudo .principal p {
     width: 430px;
+    margin-top: 10px;
     line-height: 30px;
 }
 
 .Ajusteimg1 .img1 {
-    width: 100%;
+    max-width: 100%;
     height: 100vh;
 }
 
@@ -61,7 +67,8 @@ body {
     display: inline-flex;
     border: 1px solid #f5c6c6;
     border-radius: 50px;
-    width: 400px;
+    width: 430px;
+    margin-top: 20px;
 }
 
 #enviarEmail button {
@@ -70,32 +77,30 @@ body {
     color: white;
     border-radius: 50px;
     cursor: pointer;
-    font-size: 16px;
     width: 8rem;
-    height: 50px;
+    height: 55px;
 }
 
 #enviarEmail button:hover {
-    transform: scale(1.2);
+    transform: scale(1.1);
     background: #fcb3b3;
     box-shadow: 0px 2px 3px 2px rgba(0, 0, 0, 0.3);
 }
 
-
-/* ícone de erro e mensagem */
-.icon-error {
+.icon-erro { /* ícone de erro e mensagem */
     width: 20px;
-    margin-right: 10px;
-    display: none;             /* some até o erro acontecer */
-}
-.error-message {
-    color: hsl(0, 93%, 68%);
-    font-size: .8rem;
-    margin: 5px 10px;
+    margin: 15px 10px;
     display: none;
 }
 
-@media screen and (max-width: 840px) {
+.erro_msg { /* msg de erro */
+    display: none;
+    color: rgb(228, 160, 160);
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+@media (max-width: 890px) {
     body {
         align-items: center;
         justify-content: center;

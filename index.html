@@ -22,22 +22,21 @@
             <h1><span class="ajusteCor">WE'RE</span><br>COMING <br> SOON</h1>
 
 
-            <p style="color: hsl(0, 36%, 70%);">Hello fellow shoppers! We're currently building our new fashion store.
+            <p class="ajusteCor">Hello fellow shoppers! We're currently building our new fashion store.
                 Add your email below to stay up-to-date with announcements and our launch deals.</p>
 
-
             <div id="enviarEmail">
-
                 <input class="input-conteudo" type="email" name="Email" id="Email" placeholder="Email Address">
 
-                <img src="img/icon-error.svg" alt="icone de erro" class="icon-error">
+                <span>
+                    <img src="img/icon-error.svg" alt="icone de erro" class="icon-erro" id="erroIcone">
+                </span>
 
-                <button type="submit" id="btnEnviar">
+                <button type="button" id="btnEnviar">
                     <img src="img/icon-arrow.svg" alt="">
                 </button>
             </div>
-
-            <p id="msgErro" class="error_msg">Please provide a valid email</p>
+            <p id="msgErro" class="erro_msg">Please provide a valid email</p>
         </div>
     </div>
 
@@ -45,12 +44,30 @@
         <img class="img1" src="img/hero-desktop.jpg" alt="imagem de uma mulher">
     </div>
 
-
-
-
 </body>
 
+<script>
+    const botao = document.getElementById('btnEnviar');
+    const emailInput = document.getElementById('Email');
+    const enviarEmail = document.getElementById('enviarEmail');
+    const erroIcone = document.getElementById('erroIcone');
+    const msgErro = document.getElementById('msgErro');
 
+    botao.addEventListener('click', function () {
+        const email = emailInput.value;
+
+        if (!email.includes('@') || !email.includes('.')) { // Email inválido
+            erroIcone.style.display = 'inline';
+            msgErro.style.display = 'block';
+            enviarEmail.style.border = '2px solid #fcb3b3'; //cor da borda
+        } else { // Email válido
+            erroIcone.style.display = 'none';
+            msgErro.style.display = 'none';
+            enviarEmail.style.border = '1px solid hsl(0, 36%, 70%)'; //cor da borda
+            alert("Email enviado!");
+        }
+    });
+</script>
 
 
 </html>
